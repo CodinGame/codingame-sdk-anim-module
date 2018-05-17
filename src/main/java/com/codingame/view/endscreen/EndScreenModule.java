@@ -23,19 +23,13 @@ public class EndScreenModule implements Module {
     @Override
     public final void onGameInit() {
     }
-
-    private void sendFrameData() {
-        gameManager.setViewData("endScreen", scores);
-    }
-
     @Override
     public final void onAfterGameTurn() {
-        sendFrameData();
     }
 
     @Override
     public final void onAfterOnEnd() {
-        sendFrameData();
+        gameManager.setViewData("endScreen", scores);
     }
 
 }

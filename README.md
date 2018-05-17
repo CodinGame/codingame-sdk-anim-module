@@ -8,7 +8,7 @@ Todo
 
 ## EndScreenModule
 
-Requires game engine version 1.34 or higher.
+Requires game engine version 1.35 or higher.
 
 Todo
 
