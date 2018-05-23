@@ -1,3 +1,5 @@
+# CodinGame SDK Modules
+
 This project is a set of sample modules for the creation of a game using the Game Engine Toolkit of [CodinGame](https://codingame.com).
 
 Modules make it possible add create client-side logic to the viewer, making your game perform better. With modules you also have acces to the entire `PIXI` api to manipulate the viewer as yo usee fit.
@@ -6,7 +8,7 @@ It is used with the [Codingame SDK](https://github.com/CodinGame/codingame-game-
 
 All modules work in their own layer of the viewer, you can order them by changing the order they appear in `config.js`.
 
-## TooltipModule
+# TooltipModule
 
 Can be used to assign some data to an entity from the [GraphicEntityModule](https://github.com/CodinGame/codingame-game-engine/tree/master/engine/modules/entities). The data will be displayed in a tooltip when the mouse cursor hovers over the entity on screen.
 
@@ -14,7 +16,7 @@ You may change the assigned data of each entity once per game turn.
 
 The majority of the text to display should be written into your copy of the tooltip module to reduce the amount of data the Referee must produce.
 
-## EndScreenModule
+# EndScreenModule
 
 Requires game engine version 1.35 or higher.
 
@@ -31,7 +33,7 @@ To guarantee the correct ranking, you must set this module's score property in y
   }
 ```
 
-## AnimModule
+# AnimModule
 
 Useful for games with a lot of AnimatedSprites overlayed over the rest of the game.
 
