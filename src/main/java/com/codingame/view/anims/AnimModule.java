@@ -35,7 +35,6 @@ public class AnimModule implements Module {
 
     @Override
     public void onAfterOnEnd() {
-        sendFrameData();
     }
 
     public Anim createAnimationEvent(String id, double t) {
