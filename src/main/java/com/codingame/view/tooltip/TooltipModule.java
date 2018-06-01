@@ -42,7 +42,6 @@ public class TooltipModule implements Module {
 
   @Override
   public void onAfterOnEnd() {
-    sendFrameData();
   }
 
   private void sendFrameData() {
