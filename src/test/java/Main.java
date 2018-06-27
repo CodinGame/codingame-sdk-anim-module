@@ -1,13 +1,13 @@
-import com.codingame.gameengine.runner.GameRunner;
+import com.codingame.gameengine.runner.MultiplayerGameRunner;
 
 public class Main {
     public static void main(String[] args) {
 
-        GameRunner gameRunner = new GameRunner();
+        MultiplayerGameRunner gameRunner = new MultiplayerGameRunner();
 
         // Adds as many player as you need to test your game
-        gameRunner.addAgent(Player1.class);
-        gameRunner.addAgent(Player2.class);
+        gameRunner.addAgent(Agent1.class);
+        gameRunner.addAgent(Agent2.class);
 
         // gameRunner.addAgent("python3 /home/user/player.py");
 
