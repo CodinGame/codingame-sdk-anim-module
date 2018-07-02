@@ -1,8 +1,8 @@
 
-import * as utils from '../core/utils.js';
-import {WIDTH, HEIGHT} from '../core/constants.js';
+import * as utils from '../../core/utils.js';
+import {WIDTH, HEIGHT} from '../../core/constants.js';
 import {FRAMES, ANCHORS} from './AnimData.js';
-import {api as entityModule} from '../entity-module/GraphicEntityModule.js';
+import {api as entityModule} from '../../entity-module/GraphicEntityModule.js';
 
 const DURATIONS = {
   death: 1,

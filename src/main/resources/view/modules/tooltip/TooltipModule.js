@@ -1,7 +1,7 @@
-import { ErrorLog } from '../core/ErrorLog.js';
-import { WIDTH, HEIGHT } from '../core/constants.js';
-import * as utils from '../core/utils.js';
-import { api as entityModule } from '../entity-module/GraphicEntityModule.js';
+import { ErrorLog } from '../../core/ErrorLog.js';
+import { WIDTH, HEIGHT } from '../../core/constants.js';
+import * as utils from '../../core/utils.js';
+import { api as entityModule } from '../../entity-module/GraphicEntityModule.js';
 
 
 function getMouseOverFunc(id, tooltip) {
