@@ -8,53 +8,10 @@ It is used with the [Codingame SDK](https://github.com/CodinGame/codingame-game-
 
 All modules work in their own layer of the viewer, you can order them by changing the order they appear in `config.js`.
 
-# TooltipModule
+# How to use modules
 
-Can be used to assign some data to an entity from the [GraphicEntityModule](https://github.com/CodinGame/codingame-game-engine/tree/master/engine/modules/entities). The data will be displayed in a tooltip when the mouse cursor hovers over the entity on screen.
-
-You may change the assigned data of each entity once per game turn.
-
-The majority of the text to display should be written into your copy of the tooltip module to reduce the amount of data the Referee must produce.
-
-# EndScreenModule
-
-Requires game engine version 1.35 or higher.
-
-Can be used to display the ranking of a multiplayer game with any additional info you choose. The ranking will appear at the very end of the replay.
-
-To guarantee the correct ranking, you must set this module's score property in your Referee's `onEnd()` method.
-
-### Example
-`Referee.java`
-```java
-  @Override
-  public void onEnd() {
-      endScreenModule.setScores(gameManager.getPlayers().stream().mapToInt(p -> p.getScore()).toArray());
-  }
-```
-
-# AnimModule
-
-Useful for games with a lot of AnimatedSprites overlayed over the rest of the game.
-
-Instead of have the Referee output the entire sequence of images for each new animation, you may have it reference a pre-existing animation as defined in `AnimData.js` and configured in `AnimModule.js`.
-
-### Example
-`Referee.java`
-```java
-  // Perform animation labelled "death" starting at t and lasting till end of frame
-  double t = 0.2;
-  Anim anim = animModule.createAnimationEvent('death', t);
-  anim.getParams().put("duration", 1 - t);
-```
-`AnimModule.js`
-```javascript
-  anim.started = {frame: number, t: anim.t};
-  anim.duration = 
-    anim.params.duration // If duration is given, use it
-    || 
-    DURATIONS[a.id] // Else use predefined duration for this anim id
-    || 
-    1; // Else animate it for the length of 1 frame
-  
-```
+1. Create a new project base on the [Game skeleton](https://github.com/CodinGame/game-skeleton) or an [Example](https://tech.io/playgrounds/25775/codingame-sdk-documentation/introduction-4), or use your existing project.
+2. Copy the `.java` files of the chosen module into `src/main/java/`
+3. Copy the `.js` files of the chosen module into `src/main/resources/view`
+4. If not already present, create a `config.js` file in `src/main/resources/view` based on the example in this repository. Import the `.js` file you need and add it to the `modules` array.
+5. See the [CodinGame SDK Documentation](https://tech.io/playgrounds/25775/codingame-sdk-documentation) for more details on each module
