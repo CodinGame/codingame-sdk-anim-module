@@ -195,7 +195,7 @@ export class EndScreenModule {
 
     layer.backgroundRanking = background
 
-    var titleRanking = new PIXI.Sprite.fromFrame('assets/title_ranking.png')
+    var titleRanking = new PIXI.Sprite.fromFrame('title_ranking.png')
     titleRanking.anchor.x = titleRanking.anchor.y = 0.5
     layer.titleRanking = titleRanking
 
