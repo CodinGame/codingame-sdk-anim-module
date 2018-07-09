@@ -42,14 +42,23 @@ public class TooltipModule implements Module {
 
   @Override
   public void onAfterOnEnd() {
+    sendFrameData();
   }
 
   private void sendFrameData() {
-    Object[] data = { registrations, newExtra };
+    Object[] data = { newRegistrations, newExtra };
     gameManager.setViewData("tooltips", data);
 
     newRegistrations.clear();
     newExtra.clear();
+  }
+
+  public void registerEntity(Entity<?> entity) {
+    registerEntity(entity, new HashMap<>());
+  }
+
+  public void registerEntity(Entity<?> entity, Map<String, Object> params) {
+    registerEntity(entity.getId(), params);
   }
 
   public void registerEntity(int id, Map<String, Object> params) {
@@ -57,6 +66,10 @@ public class TooltipModule implements Module {
       newRegistrations.put(id, params);
       registrations.put(id, params);
     }
+  }
+
+	boolean deepEquals(String[] a, String[] b) {
+    return Arrays.deepEquals(a,b);
   }
 
   public Map<String, Object> getParams(int id) {
@@ -70,7 +83,7 @@ public class TooltipModule implements Module {
 
   public void updateExtraTooltipText(Entity<?> entity, String... lines) {
     int id = entity.getId();
-    if (!Arrays.equals(lines, extra.get(id))) {
+    if (!deepEquals(lines, extra.get(id))) {
       newExtra.put(id, lines);
       extra.put(id, lines);
     }
