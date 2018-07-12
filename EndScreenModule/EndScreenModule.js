@@ -1,5 +1,5 @@
-import {WIDTH, HEIGHT} from '../../core/constants.js'
-import {lerp, unlerp} from '../../core/utils.js'
+import {WIDTH, HEIGHT} from './core/constants.js'
+import {lerp, unlerp} from './core/utils.js'
 
 export class EndScreenModule {
   constructor (assets) {
