@@ -4,6 +4,7 @@ import {lerp, unlerp} from './core/utils.js'
 export class EndScreenModule {
   constructor (assets) {
     this.states = []
+    this.scores = []
     this.globalData = {}
     window.module = this
     this.atEnd = false
