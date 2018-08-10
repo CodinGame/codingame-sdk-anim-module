@@ -116,7 +116,12 @@ export class TooltipModule {
     this.currentProgress = progress;
   }
 
-  handleFrameData(frameInfo, [registrations, extra]) {
+  handleFrameData(frameInfo, data) {
+    if (!data) {
+      return
+    }
+    const refistrations = data[0]
+    const extra = data[1]
     const registered = { ...registrations };
     const extraText = { ...this.previousFrame.extraText, ...extra };
 
